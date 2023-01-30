@@ -10,8 +10,6 @@ public class Remolque {
 
     @Override
     public String toString() {
-        return "Remolque{" +
-                "pesoRemolque=" + pesoRemolque +
-                '}';
+        return "" +pesoRemolque;
     }
 }

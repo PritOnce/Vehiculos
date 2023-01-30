@@ -6,14 +6,14 @@ public class Vehiculo {
     public Vehiculo() {
     }
 
-    public Vehiculo(String matricula, double velocidadInicial) {
+    public Vehiculo(String matricula, double velocidadInicial) throws DemasiadoRapidoException{
         this.matricula = matricula;
         acelerar(velocidadInicial);
 
     }
 
-    public double acelerar (double velocidad){
-        velocidadInicial+=velocidad;
+    public double acelerar (double acelerar) throws DemasiadoRapidoException {
+        velocidadInicial+=acelerar;
         return velocidadInicial;
     }
 

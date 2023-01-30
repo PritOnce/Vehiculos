@@ -1,23 +1,32 @@
 public class Camion extends Vehiculo{
-    Remolque R1 = new Remolque();
-    
+    Remolque R1;
 
-    public Camion(String matricula, double velocidadInicial, Remolque r1) {
+    public Camion(String matricula, double velocidadInicial) throws DemasiadoRapidoException {
         super(matricula, velocidadInicial);
-        R1 = null;
     }
 
-    private void porRemolque(){
-        if(R1!=null){
-
+    public void ponRemolque(Remolque R1){
+            this.R1=R1;
     }
-    private void quitaRemolque(){
-
+    public void quitaRemolque(){
+            this.R1=null;
         }
-    }
+
+        public double acelerar(double acelerar) throws DemasiadoRapidoException{
+        if(R1!=null && velocidadInicial+acelerar>=100){
+            throw new DemasiadoRapidoException("Vas demasiado rápido");
+        }else {
+            velocidadInicial+=acelerar;
+        }
+            return velocidadInicial;
+        }
 
     @Override
-    public double acelerar(double velocidad) {
-        return super.acelerar(velocidad);
+    public String toString() {
+        if(this.R1!=null && velocidadInicial<100){
+            return "MATRICULA: " +matricula+ ". La velocidad es :" +velocidadInicial+" KM/H. Además lleva un remolque de: " + R1+" KG";
+        }else{
+            return "MATRICULA: " +matricula+ ". La velocidad es :" +velocidadInicial+" KM/H";
+        }
     }
 }
