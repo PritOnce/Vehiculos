@@ -7,10 +7,24 @@ public class Main {
         Arr [3] = new Cotxe("709-MHC",10,2);
        Remolque R1 = new Remolque(5000);
 
-       for (int i = 0; i<Arr.length;i++){
-           if(Arr[i] instanceof Camion){
-
+       try{
+           for (int i = 0; i<Arr.length;i++){
+               if(Arr[i] instanceof Camion){
+                   ((Camion) Arr[i]).ponRemolque(R1);
+               }
            }
+           for (int i=0;i< Arr.length;i++){
+               if(Arr[i] instanceof Cotxe){
+                   Arr[i].acelerar(60);
+               }
+               if(Arr[i] instanceof Camion){
+                   Arr[i].acelerar(60);
+               }
+               System.out.println(Arr[i]);
+           }
+       }catch (DemasiadoRapidoException D){
+           System.out.println(D.getMessage());
        }
+
     }
 }

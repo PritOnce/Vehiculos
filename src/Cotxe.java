@@ -9,4 +9,13 @@ public class Cotxe extends Vehiculo{
     public int getNum_puertas() {
         return num_puertas;
     }
+
+    @Override
+    public String toString() {
+        return "Cotxe{" +
+                "num_puertas=" + num_puertas +
+                ", matricula='" + matricula + '\'' +
+                ", velocidadInicial=" + velocidadInicial +
+                '}';
+    }
 }
