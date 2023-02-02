@@ -12,21 +12,23 @@ public class Camion extends Vehiculo{
             this.R1=null;
         }
 
-        public double acelerar(double acelerar) throws DemasiadoRapidoException{
-        if(R1!=null && velocidadInicial+acelerar>=100){
-            throw new DemasiadoRapidoException("Vas demasiado rápido");
-        }else {
-            velocidadInicial+=acelerar;
+        public void acelerar(double acelerar) throws DemasiadoRapidoException{
+        try{
+            if(R1!=null && velocidadInicial+acelerar>=100){
+                throw new DemasiadoRapidoException("Vas demasiado rápido");
+            }else {
+                velocidadInicial+=acelerar;
+            }
+        }catch (DemasiadoRapidoException E){
+            System.out.println(E.getMessage());
         }
-            return velocidadInicial;
         }
-
     @Override
     public String toString() {
         if(this.R1!=null && velocidadInicial<100){
-            return "MATRICULA: " +matricula+ ". La velocidad es :" +velocidadInicial+" KM/H. Además lleva un remolque de: " + R1+" KG";
+            return "CAMIÓN: {MATRICULA: " +matricula+ ". La velocidad es :" +velocidadInicial+" KM/H. Además lleva un remolque de: " + R1+" KG}";
         }else{
-            return "MATRICULA: " +matricula+ ". La velocidad es :" +velocidadInicial+" KM/H";
+            return "CAMIÓN: {MATRICULA: " +matricula+ ". La velocidad es :" +velocidadInicial+" KM/H}";
         }
     }
 }

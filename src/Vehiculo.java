@@ -12,9 +12,8 @@ public class Vehiculo {
 
     }
 
-    public double acelerar (double acelerar) throws DemasiadoRapidoException {
+    public void acelerar (double acelerar) throws DemasiadoRapidoException {
         velocidadInicial+=acelerar;
-        return velocidadInicial;
     }
 
     @Override

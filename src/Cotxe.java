@@ -12,10 +12,6 @@ public class Cotxe extends Vehiculo{
 
     @Override
     public String toString() {
-        return "Cotxe{" +
-                "num_puertas=" + num_puertas +
-                ", matricula='" + matricula + '\'' +
-                ", velocidadInicial=" + velocidadInicial +
-                '}';
+        return "COTXE: {MATRICULA: " +matricula+ ". La velocidad es :" +velocidadInicial+" KM/H. Num.Puertas :" +num_puertas;
     }
 }
